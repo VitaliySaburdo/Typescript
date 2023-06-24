@@ -45,4 +45,39 @@ let obj: {value: string};
 
 obj = { value: 'string' };
 
-obj.value
+obj.value;
+
+let db: {
+  id: number;
+  title: string;
+  // ? means that the field is optional
+  info?: {  
+    date: Date;
+    isNew?: boolean;
+  }
+};
+
+// no errors here
+db = {
+  id: 1,
+  title: 'New product',
+  info: {
+    date: new Date(),
+    // isNew: true
+  }
+};
+
+/**
+  |============================
+  | Any
+  |============================
+*/
+
+let some: any;
+
+// no errors here
+some = 1;
+some = 'string';
+some = true;
+some = [];
+some = {};

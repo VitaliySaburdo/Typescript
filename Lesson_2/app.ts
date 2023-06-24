@@ -32,3 +32,7 @@ arr = ["string"];
 let arrNum: number[] = [];
 
 arrNum = [1, 2];
+
+let arrAny: any[] = [];
+
+arrAny = [1, '2',{name:"string"}];

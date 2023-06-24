@@ -36,3 +36,13 @@ arrNum = [1, 2];
 let arrAny: any[] = [];
 
 arrAny = [1, '2',{name:"string"}];
+
+let arrObject: { name: string }[];
+
+arrObject = [{ name: 'Max' }, { name: 'Alex' }]
+
+let obj: {value: string};
+
+obj = { value: 'string' };
+
+obj.value

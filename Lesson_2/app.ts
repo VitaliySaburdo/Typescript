@@ -35,15 +35,15 @@ arrNum = [1, 2];
 
 let arrAny: any[] = [];
 
-arrAny = [1, '2',{name:"string"}];
+arrAny = [1, "2", { name: "string" }];
 
 let arrObject: { name: string }[];
 
-arrObject = [{ name: 'Max' }, { name: 'Alex' }]
+arrObject = [{ name: "Max" }, { name: "Alex" }];
 
-let obj: {value: string};
+let obj: { value: string };
 
-obj = { value: 'string' };
+obj = { value: "string" };
 
 obj.value;
 
@@ -51,20 +51,20 @@ let db: {
   id: number;
   title: string;
   // ? means that the field is optional
-  info?: {  
+  info?: {
     date: Date;
     isNew?: boolean;
-  }
+  };
 };
 
 // no errors here
 db = {
   id: 1,
-  title: 'New product',
+  title: "New product",
   info: {
     date: new Date(),
     // isNew: true
-  }
+  },
 };
 
 /**
@@ -77,7 +77,54 @@ let some: any;
 
 // no errors here
 some = 1;
-some = 'string';
+some = "string";
 some = true;
 some = [];
 some = {};
+
+/**
+  |============================
+  | Unknown
+  |============================
+*/
+
+let something: unknown;
+
+something = 10;
+
+something = 'string';
+
+let string: string;
+
+// Type guard
+
+if (typeof something === 'string') {
+  string = something
+}
+
+/**
+  |============================
+  | Tuple
+  |============================
+*/
+
+
+let fixed: ['string', number];
+
+fixed = ['string', 2];
+
+/**
+  |============================
+  | Enum
+  |============================
+*/
+
+enum Toggle { ENABLE, DISABLE };
+
+const service = {
+  status: Toggle.ENABLE
+};
+
+if (service.status === Toggle.ENABLE) {
+  console.log('it`s active');
+};

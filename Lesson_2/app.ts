@@ -153,6 +153,8 @@ function combine(param1: string | number, param2: string | number) {
   |============================
 */
 
-let active: 'start' | 'end';
+const fruit = [];
 
-active = 'end'
+function workWithArr() {
+  
+}

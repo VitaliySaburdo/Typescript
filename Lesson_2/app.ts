@@ -147,4 +147,12 @@ function combine(param1: string | number, param2: string | number) {
   return param1 + param2;
 };
 
-console.log(combine(1, 2))
+/**
+  |============================
+  | Literal type
+  |============================
+*/
+
+let active: 'start' | 'end';
+
+active = 'end'

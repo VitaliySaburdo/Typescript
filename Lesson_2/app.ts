@@ -174,3 +174,32 @@ workWithArr(fruit, 'peach', 'add');
 console.log(fruit);
 workWithArr(fruit, 'apple', 'delete');
 console.log(fruit);
+
+/**
+  |============================
+  | return type from function
+  |============================
+*/
+
+function print():void {
+  console.log('some log')
+  // return nothing
+}
+
+function returnVal(num1: number, num2: number):number {
+  return num1+num2
+}
+
+function customError():never {
+  throw new Error('Some error');
+}
+
+function createPerson(name:string) {
+  return {
+    name,
+  }
+}
+
+const people = createPerson('John');
+
+console.log(people);

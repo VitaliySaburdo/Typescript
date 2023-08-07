@@ -121,3 +121,25 @@ workWithArr(fruit, 'peach', 'add');
 console.log(fruit);
 workWithArr(fruit, 'apple', 'delete');
 console.log(fruit);
+/**
+  |============================
+  | return type from function
+  |============================
+*/
+function print() {
+    console.log('some log');
+    // return nothing
+}
+function returnVal(num1, num2) {
+    return num1 + num2;
+}
+function customError() {
+    throw new Error('Some error');
+}
+function createPerson(name) {
+    return {
+        name: name,
+    };
+}
+var people = createPerson('John');
+console.log(people);

@@ -92,14 +92,14 @@ let something: unknown;
 
 something = 10;
 
-something = 'string';
+something = "string";
 
 let string: string;
 
 // Type guard
 
-if (typeof something === 'string') {
-  string = something
+if (typeof something === "string") {
+  string = something;
 }
 
 /**
@@ -108,10 +108,9 @@ if (typeof something === 'string') {
   |============================
 */
 
+let fixed: ["string", number];
 
-let fixed: ['string', number];
-
-fixed = ['string', 2];
+fixed = ["string", 2];
 
 /**
   |============================
@@ -119,15 +118,18 @@ fixed = ['string', 2];
   |============================
 */
 
-enum Toggle { ENABLE, DISABLE };
+enum Toggle {
+  ENABLE,
+  DISABLE,
+}
 
 const service = {
-  status: Toggle.ENABLE
+  status: Toggle.ENABLE,
 };
 
 if (service.status === Toggle.ENABLE) {
-  console.log('it`s active');
-};
+  console.log("it`s active");
+}
 
 /**
   |============================
@@ -138,14 +140,14 @@ if (service.status === Toggle.ENABLE) {
 let union: number | string;
 
 union = 10;
-union = "Hello World"
+union = "Hello World";
 
 function combine(param1: string | number, param2: string | number) {
-  if (typeof param1 === 'string' || typeof param2 === 'string') {
+  if (typeof param1 === "string" || typeof param2 === "string") {
     return param1.toString() + param2.toString();
   }
   return param1 + param2;
-};
+}
 
 /**
   |============================
@@ -155,6 +157,14 @@ function combine(param1: string | number, param2: string | number) {
 
 const fruit = [];
 
-function workWithArr() {
-  
+function workWithArr(arr: string[], value: string, action: "add" | "delete") {
+  if (action === "add") {
+    arr.push(value);
+  } else {
+    const idx = arr.indexOf(value);
+    arr.splice(idx, 1);
+  }
+  return arr;
 }
+
+workWithArr(fruit, 'banana', 'add');

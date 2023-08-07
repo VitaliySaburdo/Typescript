@@ -56,10 +56,10 @@ some = {};
 */
 var something;
 something = 10;
-something = 'string';
+something = "string";
 var string;
 // Type guard
-if (typeof something === 'string') {
+if (typeof something === "string") {
     string = something;
 }
 /**
@@ -68,7 +68,7 @@ if (typeof something === 'string') {
   |============================
 */
 var fixed;
-fixed = ['string', 2];
+fixed = ["string", 2];
 /**
   |============================
   | Enum
@@ -79,14 +79,12 @@ var Toggle;
     Toggle[Toggle["ENABLE"] = 0] = "ENABLE";
     Toggle[Toggle["DISABLE"] = 1] = "DISABLE";
 })(Toggle || (Toggle = {}));
-;
 var service = {
-    status: Toggle.ENABLE
+    status: Toggle.ENABLE,
 };
 if (service.status === Toggle.ENABLE) {
-    console.log('it`s active');
+    console.log("it`s active");
 }
-;
 /**
   |============================
   | Union type
@@ -96,10 +94,25 @@ var union;
 union = 10;
 union = "Hello World";
 function combine(param1, param2) {
-    if (typeof param1 === 'string' || typeof param2 === 'string') {
+    if (typeof param1 === "string" || typeof param2 === "string") {
         return param1.toString() + param2.toString();
     }
     return param1 + param2;
 }
-;
-console.log(combine(1, 2));
+/**
+  |============================
+  | Literal type
+  |============================
+*/
+var fruit = [];
+function workWithArr(arr, value, action) {
+    if (action === "add") {
+        arr.push(value);
+    }
+    else {
+        var idx = arr.indexOf(value);
+        arr.splice(idx, 1);
+    }
+    return arr;
+}
+workWithArr(fruit, 'banana', 'add');

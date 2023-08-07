@@ -168,3 +168,9 @@ function workWithArr(arr: string[], value: string, action: "add" | "delete") {
 }
 
 workWithArr(fruit, 'banana', 'add');
+workWithArr(fruit, 'apple', 'add');
+workWithArr(fruit, 'peach', 'add');
+
+console.log(fruit);
+workWithArr(fruit, 'apple', 'delete');
+console.log(fruit);

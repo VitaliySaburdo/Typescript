@@ -116,3 +116,8 @@ function workWithArr(arr, value, action) {
     return arr;
 }
 workWithArr(fruit, 'banana', 'add');
+workWithArr(fruit, 'apple', 'add');
+workWithArr(fruit, 'peach', 'add');
+console.log(fruit);
+workWithArr(fruit, 'apple', 'delete');
+console.log(fruit);

@@ -1,3 +1,4 @@
+// Task1
 var age;
 age = 50;
 var Name;
@@ -12,3 +13,9 @@ var callback;
 callback = function (a) {
     return 100 + a;
 };
+// Task2
+var anything;
+anything = -20;
+anything = 'Text';
+anything = {};
+// Task3
